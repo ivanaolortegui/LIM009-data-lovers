@@ -148,6 +148,14 @@ iteraciones que hagas, las subas a tu repositorio, y las menciones en tu
 
 ![Sin titulo](img-readme/sketch-1.jpg)
 ![Sin titulo](img-readme/sketch-2.jpg)
+
+##### Problemas de usabilidad:
+* En este primer prototipo el usuario nos recomendo que los roles se verian mejor y mas entendibles en la parte de arriba de los campeones.
+* Le parecio bien que sea una guia rapida ya que con un click en los diferentes campeones abre otra pagina con las caracteristicas de cada uno.
+* Tambien nos recomendaron agregar un buscador ya que nuestros usuarios son jugadores que ya conocen los nombres de los campeones.
+
+##### Segunda iteracion de prototipo de baja fidelidad.
+
 ![Sin titulo](img-readme/iteracion-2.jpg)
 
 
