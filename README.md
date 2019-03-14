@@ -146,6 +146,11 @@ solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
 iteraciones que hagas, las subas a tu repositorio, y las menciones en tu
 `README.md`.
 
+![Sin titulo](img-readme/sketch-1.jpg)
+![Sin titulo](img-readme/sketch-2.jpg)
+![Sin titulo](img-readme/iteracion-2.jpg)
+
+
 #### Prototipo de alta fidelidad
 
 Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -
