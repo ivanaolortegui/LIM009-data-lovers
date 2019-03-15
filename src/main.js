@@ -1,12 +1,17 @@
 /* Manejo del DOM */
 const root = document.getElementById('root');
-
 const valuesOfData = Object.values(LOL.data);
-let dataName = '';
-valuesOfData.forEach(ele => {
-dataName +=ele.id;
-const listData =  ` <h2> ${dataName} </h2>
-<img src="${ele.img}"/>
-`
-root.innerHTML = listData;
-});
+const dataTemplate = data => {
+  let dataToHtml = '';
+  data.forEach(ele => {
+    const listData = `
+      <h2> ${ele.id} </h2>
+      <img id="img-campions" src="${ele.img}"/>
+      <h2> ${ele.tags} </h2>
+      `
+    dataToHtml += listData;
+  });
+  root.innerHTML = dataToHtml;
+};
+dataTemplate(valuesOfData);
+
