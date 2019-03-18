@@ -20,20 +20,20 @@ const dataTemplate = data => {
          <h2> ${ele.tags.join(' ')} </h2>
          <h3> ${ele.stats.attackdamage}</h3>
       </div>
-      </div>`
+      </div>`;
     dataToHtml.push(listData);
   });
   root.innerHTML = dataToHtml.join(' ');
 };
 dataTemplate(valuesOfData);
 
-root.addEventListener('click', (e) => {
-  const string = e.target.id; // accede al id de la etiqueta que se hace click
+root.addEventListener('click', (event) => {
+  const string = event.target.id; // accede al id de la etiqueta que se hace click
   const index = string.substr(0, string.indexOf('-'));
-  e.currentTarget.children[index].lastElementChild.setAttribute("class", "show");
-  const targetOfRoot = e.currentTarget.children;
-  for (let i = 0; i < targetOfRoot.length; i++) {
-    e.currentTarget.children[i].firstElementChild.setAttribute("class", "hidden")
+  event.currentTarget.children[index].lastElementChild.setAttribute('class', 'show');
+  const RootElements = root.children;
+  for (let i = 0; i < RootElements.length; i++) {
+    RootElements[i].firstElementChild.setAttribute('class', 'hidden');
   }
-})
+});
 
