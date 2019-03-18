@@ -9,14 +9,14 @@ const dataTemplate = data => {
   data.forEach((ele, index) => {
     const listData = `
      <div id=${index} class="show">
-      <div class="col-xs-4 col-sm-3 col-md-2">
+      <div class="col-xs-4 col-sm-6 col-md-2">
         <h2> ${ele.id} </h2>
         <img id=${index}-${ele.id} src="${ele.img}"/>
         
       </div>
       <div id=${index}-${ele.id} class="hidden">
-      <img class="col-md-12"src="${ele.splash}"/>
-         <article class= "col-md-12">
+      <img class="col-xs-12 col-sm-12 col-md-12"src="${ele.splash}"/>
+         <article class= "col-xs-12 col-sm-12 col-md-12">
           <h3 > ${ele.title} </h3>
           <h2> ${ele.tags.join(' ')} </h2>
           <h3> ${ele.stats.attackdamage}</h3>
