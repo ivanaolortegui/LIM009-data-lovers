@@ -9,7 +9,7 @@ const dataTemplate = data => {
   data.forEach((ele, index) => {
     const listData = `
       <div id=${index} class="show">
-        <div class="col-xs-4 col-sm-13 col-md-1">
+        <div class="col-xs-4 col-sm-13 col-md-2">
           <h2 class="col-xs-12 col-sm-12 col-md-12"> ${ele.id} </h2>
           <img class="col-xs-12 col-sm-12 col-md-12" id=${index}-${ele.id} src="${ele.splash}" alt="imagen de ${ele.id}"/>  
         </div>
