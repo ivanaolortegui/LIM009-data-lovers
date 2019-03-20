@@ -1,6 +1,6 @@
 /* Manejo del DOM */
 const root = document.getElementById('root');
-
+const select = document.getElementById('selectRole');
 /* data*/
 const valuesOfData = Object.values(LOL.data);
 
@@ -38,5 +38,10 @@ root.addEventListener('click', (event) => {
   for (let i = 0; i < RootElements.length; i++) {
     RootElements[i].firstElementChild.setAttribute('class', 'hidden');
   }
+});
+
+select.addEventListener('change', () => {
+  const value = data.filterData(valuesOfData, select.value);
+  console.log(value);
 });
 
