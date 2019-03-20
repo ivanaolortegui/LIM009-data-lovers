@@ -24,7 +24,9 @@ body {
   width: 90%;
   margin: 2% auto;   
 }
-
+figcaption {
+  padding-top: 1%;
+}
 .row:before, .row:after {
   content: " ";
   display: table;
@@ -105,6 +107,9 @@ body {
     
   .col-sm-1 {
     width: 8.33333333%;
+  }
+  .col-sm-13 {
+    width: 11.66666667%;
   }
 
   .col-sm-2 {
