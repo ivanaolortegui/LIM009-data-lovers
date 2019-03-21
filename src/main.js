@@ -1,6 +1,13 @@
 /* Manejo del DOM */
 const root = document.getElementById('root');
 const select = document.getElementById('selectRole');
+const radio = document.getElementById('radio');
+
+/* const asc = document.getElementById('r1');
+const desc = document.getElementById('r2');
+const majorDamage = document.getElementById('r3');
+const minorDamage = document.getElementById('r4'); */
+
 /* data*/
 const valuesOfData = Object.values(LOL.data);
 
@@ -43,6 +50,9 @@ root.addEventListener('click', (event) => {
 select.addEventListener('change', () => {
   const value = data.filterData(valuesOfData, select.value);
   dataTemplate(value);
-  console.log(value);
 });
 
+radio.addEventListener('click', (event) => {
+  const radioValue = event.target.value;
+  console.log(radioValue);
+});
