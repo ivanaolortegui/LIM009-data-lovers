@@ -10,7 +10,6 @@ const minorDamage = document.getElementById('r4'); */
 
 /* data*/
 const valuesOfData = Object.values(LOL.data);
-
 const dataTemplate = data => {
   let dataToHtml = [];
   data.forEach((ele, index) => {
@@ -25,7 +24,7 @@ const dataTemplate = data => {
             <img class= "col-xs-8 col-sm-3 col-md-8"src="${ele.splash}"/>
             <figcaption>
               <h3> ${ele.title} </h3>
-              <h2> ${ele.tags.join(' ')} </h2>
+              <img class="icon-img" src="img/asesino-shop.png" <h2> ${ele.tags.join(' ')} </h2>
               <h3> ${ele.stats.attackdamage}</h3>     
             </figcaption>
           </figure>

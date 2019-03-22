@@ -35,7 +35,9 @@ figcaption {
 .row:after {
   clear: both;
 } 
-
+.icon-img{
+  width: 3%;
+}
 [class*= "col-"] { 
   /*padding: 2em;*/ /*15px*/
   float: left; 
