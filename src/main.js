@@ -2,7 +2,7 @@
 const root = document.getElementById('root');
 const select = document.getElementById('selectRole');
 const radio = document.getElementById('radio');
-
+const botonTop = document.getElementById("backTop");
 /* const asc = document.getElementById('r1');
 const desc = document.getElementById('r2');
 const majorDamage = document.getElementById('r3');
@@ -55,3 +55,20 @@ radio.addEventListener('click', (event) => {
   const radioValue = event.target.value;
   console.log(radioValue);
 });
+
+/* back to top*/
+botonTop.addEventListener('click', () => {
+  document.documentElement.scrollTop = 0;
+});
+
+window.onscroll = function() {
+  scrollFunction()
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    document.getElementById("backTop").style.display = "block";
+  } else {
+    document.getElementById("backTop").style.display = "none";
+  }
+}
