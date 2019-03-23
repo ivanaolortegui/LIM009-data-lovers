@@ -2,7 +2,7 @@
 const root = document.getElementById('root');
 const select = document.getElementById('selectRole');
 const radio = document.getElementById('radio');
-const botonTop = document.getElementById("backTop");
+const botonTop = document.getElementById('backTop');
 /* const asc = document.getElementById('r1');
 const desc = document.getElementById('r2');
 const majorDamage = document.getElementById('r3');
@@ -62,13 +62,13 @@ botonTop.addEventListener('click', () => {
 });
 
 window.onscroll = function() {
-  scrollFunction()
+  scrollFunction();
 };
 
 function scrollFunction() {
   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    document.getElementById("backTop").style.display = "block";
+    botonTop.style.display = "block";
   } else {
-    document.getElementById("backTop").style.display = "none";
+    botonTop.style.display = "none";
   }
 }
