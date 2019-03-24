@@ -53,7 +53,8 @@ select.addEventListener('change', () => {
 
 radio.addEventListener('click', (event) => {
   const radioValue = event.target.value;
-  console.log(radioValue);
+  const resultOrder = data.sortData(valuesOfData, radioValue);
+  dataTemplate(resultOrder);
 });
 
 /* back to top*/
@@ -61,14 +62,14 @@ botonTop.addEventListener('click', () => {
   document.documentElement.scrollTop = 0;
 });
 
-window.onscroll = function () {
+window.onscroll = function() {
   scrollFunction();
 };
 
-function scrollFunction() {
+const scrollFunction = () => {
   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    botonTop.style.display = "block";
+    botonTop.style.display = 'block';
   } else {
-    botonTop.style.display = "none";
+    botonTop.style.display = 'none';
   }
-}
+};
