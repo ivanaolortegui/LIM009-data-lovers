@@ -9,9 +9,19 @@ window.data = {
     });
     return roles;
   },
-  sortData: () => {
+  sortData: (data, sortOrder) => {
     // 3 parameters: data, sortBy, sortOrder
     // A-Z, Z-A
+    const OrderNames = data.sort((a, b) => {
+      a = a.name.toLowerCase();
+      b = b.name.toLowerCase();
+      if (a > b) {
+        return 1 * sortOrder;
+      } else if (a < b) {
+        return -1 * sortOrder;
+      }
+    });
+    return OrderNames;
   },
     
   computeStats: () => {
