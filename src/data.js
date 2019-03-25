@@ -9,21 +9,25 @@ window.data = {
     });
     return roles;
   },
-  sortData: (data, sortOrder) => {
-    // 3 parameters: data, sortBy, sortOrder
+  sortData: (data, sortOrder, sortBy) => {
+    // 3 parameters: data, sortOrder, sortBy
     // A-Z, Z-A
-    const OrderNames = data.sort((a, b) => {
-      a = a.name.toLowerCase();
-      b = b.name.toLowerCase();
-      if (a > b) {
-        return 1 * sortOrder;
-      } else if (a < b) {
-        return -1 * sortOrder;
+    let order = [];
+    if (sortOrder === '1') {
+      if (sortBy === 'name') {
+        order = data.sort((a, b) => a.id.localeCompare(b.id));    
+      } else {
+        order = data.sort((a, b) => a.stats.attackdamage - b.stats.attackdamage);  
       }
-    });
-    return OrderNames;
+    } else {
+      if (sortBy === 'name') {
+        order = data.sort((a, b) => b.id.localeCompare(a.id));    
+      } else {
+        order = data.sort((a, b) => b.stats.attackdamage - a.stats.attackdamage);
+      }
+    }
+    return order;
   },
-    
   computeStats: () => {
     // 1 parameter: data
     // Statistics
