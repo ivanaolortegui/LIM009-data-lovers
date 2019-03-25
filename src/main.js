@@ -53,7 +53,8 @@ select.addEventListener('change', () => {
 
 radio.addEventListener('click', (event) => {
   const radioValue = event.target.value;
-  const resultOrder = data.sortData(valuesOfData, radioValue);
+  const radioName = event.target.getAttribute('data-name');
+  const resultOrder = data.sortData(valuesOfData, radioValue, radioName);
   dataTemplate(resultOrder);
 });
 
