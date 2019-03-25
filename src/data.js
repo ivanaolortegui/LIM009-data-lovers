@@ -30,6 +30,17 @@ window.data = {
   },
   computeStats: () => {
     // 1 parameter: data
-    // Statistics
+        // Statistics
+        const AttackChampsInfo = data.map((data) => {
+          return data.info.attack;
+      });
+      AttackChampsInfo.sort((a, b) => { a - b });
+      //const DifficultyChampsInfo = data.map((y) => {
+      //    return y.info.difficulty;
+      //});
+      //DifficultyChampsInfo.sort((a, b) => { a - b });
+      const arrMean = AttackChampsInfo / AttackChampsInfo.length
+      return arrMean;
+  }   
   }
 };
