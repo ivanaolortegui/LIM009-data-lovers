@@ -64,6 +64,7 @@
   "extends": "eslint:recommended",
   "globals": {
     "example": false,
-    "LOL":false
+    "LOL":false,
+    "data" : false
   }
 }
