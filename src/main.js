@@ -74,7 +74,15 @@ radio.addEventListener('click', (event) => {
   showListOfAllChampions(resultOrder);
 });
 stats.addEventListener('click', () => {
-
+  let stats = '';
+  stats += data.computeStats(valuesOfData, 'Tank');
+  stats += data.computeStats(valuesOfData, 'Melee');
+  stats += data.computeStats(valuesOfData, 'Assassin');
+  stats += data.computeStats(valuesOfData, 'Fighter');
+  stats += data.computeStats(valuesOfData, 'Mage');
+  stats += data.computeStats(valuesOfData, 'Marksman');
+  stats += data.computeStats(valuesOfData, 'Support');
+  console.log(stats);
 });
 /* back to top*/
 botonTop.addEventListener('click', () => {
