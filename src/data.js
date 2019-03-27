@@ -40,7 +40,7 @@ window.data = {
     attackChampsInfo.forEach((ele) => {
       sum += ele;
     });
-    const arrMean = sum / attackChampsInfo.length; // promedio de attaque
+    const arrMean = (sum / attackChampsInfo.length).toFixed(2); // promedio de attaque
     const difficultyChampsInfo = data.map((arr) => {
       return arr.info.difficulty;
     });
@@ -49,7 +49,7 @@ window.data = {
     difficultyChampsInfo.forEach((ele) => {
       sumDifficulty += ele;
     });
-    const meanDifficulty = sumDifficulty / difficultyChampsInfo.length; // promedio de dificultad
+    const meanDifficulty = (sumDifficulty / difficultyChampsInfo.length).toFixed(2); // promedio de dificultad
     return `promedio de attack: ${arrMean} 
     promedio de dificulty:${meanDifficulty}`;
   }
