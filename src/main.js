@@ -1,6 +1,6 @@
 /* Manejo del DOM */
+const selectTags = document.getElementById('select-tags');
 const root = document.getElementById('root');
-const select = document.getElementById('selectRole');
 const radio = document.getElementById('radio');
 const botonTop = document.getElementById('backTop');
 
@@ -36,6 +36,7 @@ const dataTemplate = data => {
 dataTemplate(valuesOfData);
 
 const dynamicSelect = (data) => {
+  let opctionToHtml = '';
   let tagsElement = [];
   data.forEach((ele) => {
     tagsElement.push(...ele.tags);
@@ -48,9 +49,21 @@ const dynamicSelect = (data) => {
       uniqueTags;
     }
   }
-  console.log(uniqueTags);
+  uniqueTags.forEach(tags => {
+    opctionToHtml += `<option value =${tags}> ${tags} </option>`;
+  });
+  selectTags.innerHTML = opctionToHtml;
 };
 dynamicSelect(valuesOfData);
+
+selectTags.addEventListener('change', () => {
+  const value = data.filterData(valuesOfData, selectTags.value);
+  const stats = data.computeStats(value);
+  console.log(stats);
+  
+  dataTemplate(value);
+});
+
 
 root.addEventListener('click', (event) => {
   const string = event.target.id; // accede al id de la etiqueta que se hace click
@@ -60,13 +73,6 @@ root.addEventListener('click', (event) => {
   for (let i = 0; i < RootElements.length; i++) {
     RootElements[i].firstElementChild.setAttribute('class', 'hidden');
   }
-});
-
-select.addEventListener('change', () => {
-  const value = data.filterData(valuesOfData, select.value);
-  const stats = data.computeStats(value);
-  console.log(stats);
-  dataTemplate(value);
 });
 
 radio.addEventListener('click', (event) => {
