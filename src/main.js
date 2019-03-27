@@ -35,6 +35,22 @@ const dataTemplate = data => {
 };
 dataTemplate(valuesOfData);
 
+const dynamicSelect = (data) => {
+  let tagsElement = [];
+  data.forEach((ele) => {
+    tagsElement.push(...ele.tags);
+  });
+  let uniqueTags = [];
+  for (let i = 0; i < tagsElement.length; i++) {
+    if (i === tagsElement.indexOf(tagsElement[i])) {
+      uniqueTags.push(tagsElement[i]);
+    } else {
+      uniqueTags;
+    }
+  }
+  console.log(uniqueTags);
+};
+dynamicSelect(valuesOfData);
 
 root.addEventListener('click', (event) => {
   const string = event.target.id; // accede al id de la etiqueta que se hace click
