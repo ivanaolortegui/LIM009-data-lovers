@@ -3,6 +3,22 @@
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 window.data = {
+  getAllChampsTags: (dataCampeones) => {
+    const arr = [];
+    dataCampeones.forEach((ele) => {
+      arr.push(...ele.tags);
+    });
+    return arr;
+  },
+  getAllUniqueChampsTags: (arrTags) => {
+    const uniqueTags = [];
+    for (let i = 0; i < arrTags.length; i++) {
+      if (uniqueTags.indexOf(arrTags[i]) === -1) {
+        uniqueTags.push(arrTags[i]);
+      }
+    }
+    return uniqueTags;
+  },
   filterData: (data, word) => {
     const roles = data.filter(value => {
       return value.tags.includes(word);
