@@ -48,6 +48,8 @@ root.addEventListener('click', (event) => {
 
 select.addEventListener('change', () => {
   const value = data.filterData(valuesOfData, select.value);
+  const stats = data.computeStats(value);
+  console.log(stats);
   dataTemplate(value);
 });
 
