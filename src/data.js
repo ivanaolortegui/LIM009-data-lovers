@@ -15,32 +15,42 @@ window.data = {
     let order = [];
     if (sortOrder === '1') {
       if (sortBy === 'name') {
-        order = data.sort((a, b) => a.id.localeCompare(b.id));    
+        order = data.sort((a, b) => a.id.localeCompare(b.id));
       } else {
-        order = data.sort((a, b) => a.stats.attackdamage - b.stats.attackdamage);  
+        order = data.sort((a, b) => a.stats.attackdamage - b.stats.attackdamage);
       }
     } else {
       if (sortBy === 'name') {
-        order = data.sort((a, b) => b.id.localeCompare(a.id));    
+        order = data.sort((a, b) => b.id.localeCompare(a.id));
       } else {
         order = data.sort((a, b) => b.stats.attackdamage - a.stats.attackdamage);
       }
     }
     return order;
   },
-  computeStats: () => {
+  computeStats: (data) => {
     // 1 parameter: data
-        // Statistics
-        const AttackChampsInfo = data.map((data) => {
-          return data.info.attack;
-      });
-      AttackChampsInfo.sort((a, b) => { a - b });
-      //const DifficultyChampsInfo = data.map((y) => {
-      //    return y.info.difficulty;
-      //});
-      //DifficultyChampsInfo.sort((a, b) => { a - b });
-      const arrMean = AttackChampsInfo / AttackChampsInfo.length
-      return arrMean;
-  }   
+    // Statistics
+    const attackChampsInfo = data.map((arr) => {
+      return arr.info.attack;
+    });
+    attackChampsInfo;
+    attackChampsInfo.sort((a, b) => a - b);
+    let sum = 0;
+    attackChampsInfo.forEach((ele) => {
+      sum += ele;
+    });
+    const arrMean = sum / attackChampsInfo.length; // promedio de attaque
+    const difficultyChampsInfo = data.map((arr) => {
+      return arr.info.difficulty;
+    });
+    difficultyChampsInfo.sort((a, b) => a - b);
+    let sumDifficulty = 0;
+    difficultyChampsInfo.forEach((ele) => {
+      sumDifficulty += ele;
+    });
+    const meanDifficulty = sumDifficulty / difficultyChampsInfo.length; // promedio de dificultad
+    return `promedio de attack: ${arrMean} 
+    promedio de dificulty:${meanDifficulty}`;
   }
 };
