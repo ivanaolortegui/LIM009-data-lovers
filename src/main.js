@@ -3,10 +3,12 @@ const selectTags = document.getElementById('select-tags');
 const root = document.getElementById('root');
 const radio = document.getElementById('radio');
 const botonTop = document.getElementById('backTop');
+const stats = document.getElementById('stats');
 
 /* data*/
 const valuesOfData = Object.values(LOL.data);
-const dataTemplate = data => {
+
+const showListOfAllChampions = data => {
   let dataToHtml = [];
   data.forEach((ele, index) => {
     let listData = `
@@ -33,35 +35,25 @@ const dataTemplate = data => {
   });
   root.innerHTML = dataToHtml.join(' ');
 };
-dataTemplate(valuesOfData);
+showListOfAllChampions(valuesOfData);
 
-const dynamicSelect = (data) => {
-  let opctionToHtml = '';
-  let tagsElement = [];
-  data.forEach((ele) => {
-    tagsElement.push(...ele.tags);
-  });
-  let uniqueTags = [];
-  for (let i = 0; i < tagsElement.length; i++) {
-    if (i === tagsElement.indexOf(tagsElement[i])) {
-      uniqueTags.push(tagsElement[i]);
-    } else {
-      uniqueTags;
-    }
-  }
-  uniqueTags.forEach(tags => {
+const pintarTagOpcionsDeSelect = (arrTagsUnicos, elementoSelect) => {
+  let opctionToHtml = '<option value = ""> Seleccione su role </option>';
+  arrTagsUnicos.forEach(tags => {
     opctionToHtml += `<option value =${tags}> ${tags} </option>`;
   });
-  selectTags.innerHTML = opctionToHtml;
+  elementoSelect.innerHTML = opctionToHtml;
 };
-dynamicSelect(valuesOfData);
+
+const totalArrayTags = data.getAllChampsTags(valuesOfData);
+const uniqueArrayTags = data.getAllUniqueChampsTags(totalArrayTags);
+
+pintarTagOpcionsDeSelect(uniqueArrayTags, selectTags);
 
 selectTags.addEventListener('change', () => {
   const value = data.filterData(valuesOfData, selectTags.value);
-  const stats = data.computeStats(value);
-  console.log(stats);
-  
-  dataTemplate(value);
+  const stats = data.computeStats(value); 
+  showListOfAllChampions(value);
 });
 
 
@@ -79,14 +71,22 @@ radio.addEventListener('click', (event) => {
   const radioValue = event.target.value;
   const radioName = event.target.getAttribute('data-name');
   const resultOrder = data.sortData(valuesOfData, radioValue, radioName);
-  dataTemplate(resultOrder);
+  showListOfAllChampions(resultOrder);
 });
+stats.addEventListener('click', () => {
 
+});
 /* back to top*/
 botonTop.addEventListener('click', () => {
   document.documentElement.scrollTop = 0;
 });
 
+window.addEventListener('scroll', () => {
+
+
+});
+
+/* 
 window.onscroll = function() {
   scrollFunction();
 };
@@ -98,3 +98,4 @@ const scrollFunction = () => {
     botonTop.style.display = 'none';
   }
 };
+*/
