@@ -31,42 +31,47 @@ window.data = {
     let order = [];
     if (sortOrder === '1') {
       if (sortBy === 'name') {
-        order = data.sort((a, b) => a.id.localeCompare(b.id));
+        order = data.sort((elementA, elementB) => elementA.id.localeCompare(elementB.id));
       } else {
-        order = data.sort((a, b) => a.stats.attackdamage - b.stats.attackdamage);
+        order = data.sort((elementA, elementB) => elementA.stats.attackdamage - elementB.stats.attackdamage);
       }
     } else {
       if (sortBy === 'name') {
-        order = data.sort((a, b) => b.id.localeCompare(a.id));
+        order = data.sort((elementA, elementB) => elementB.id.localeCompare(elementA.id));
       } else {
-        order = data.sort((a, b) => b.stats.attackdamage - a.stats.attackdamage);
+        order = data.sort((elementA, elementB) => elementB.stats.attackdamage - elementA.stats.attackdamage);
       }
     }
     return order;
   },
-  computeStats: (data) => {
+  computeStats: (data, tags) => {
     // 1 parameter: data
     // Statistics
-    const attackChampsInfo = data.map((arr) => {
-      return arr.info.attack;
+    const arrTank = data.filter(value => {
+      return value.tags.includes(tags);
     });
-    attackChampsInfo;
-    attackChampsInfo.sort((a, b) => a - b);
+    const statsAttackTank = arrTank.map((arr) => arr.info.attack);
+    statsAttackTank.sort((elementA, elementB) => elementA - elementB);
     let sum = 0;
-    attackChampsInfo.forEach((ele) => {
+    statsAttackTank.forEach((ele) => {
       sum += ele;
     });
-    const arrMean = (sum / attackChampsInfo.length).toFixed(2); // promedio de attaque
-    const difficultyChampsInfo = data.map((arr) => {
-      return arr.info.difficulty;
-    });
-    difficultyChampsInfo.sort((a, b) => a - b);
+    const arrMeanTank = (sum / statsAttackTank.length).toFixed(2); 
+    const statsDifficultyTank = arrTank.map((arr) => arr.info.difficulty);
+    statsDifficultyTank.sort((elementA, elementB) => elementA - elementB);
     let sumDifficulty = 0;
-    difficultyChampsInfo.forEach((ele) => {
+    statsDifficultyTank.forEach((ele) => {
       sumDifficulty += ele;
     });
-    const meanDifficulty = (sumDifficulty / difficultyChampsInfo.length).toFixed(2); // promedio de dificultad
-    return `promedio de attack: ${arrMean} 
-    promedio de dificulty:${meanDifficulty}`;
-  }
+    const meanDifficulty = (sumDifficulty / statsDifficultyTank.length).toFixed(2); // promedio de dificultad
+    /*  console.log(arrTank);
+    const arrEle = [];
+    const totalArr = [arrTank, arrMelee, arrAssassin].forEach(ele => ele.map((arr) => arrEle.push(arr.info.attack)));
+    console.log(arrEle);
+     */
+    return `
+    promedio de attack de ${tags}: ${arrMeanTank}
+    promedio de dificultad de ${tags}:   ${meanDifficulty}
+    `;
+  } 
 };
