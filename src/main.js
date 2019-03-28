@@ -77,14 +77,9 @@ radio.addEventListener('click', (event) => {
 });
 btnStats.addEventListener('click', () => {
   let stats = '';
-  stats += data.computeStats(valuesOfData, 'Tank');
-  stats += data.computeStats(valuesOfData, 'Melee');
-  stats += data.computeStats(valuesOfData, 'Assassin');
-  stats += data.computeStats(valuesOfData, 'Fighter');
-  stats += data.computeStats(valuesOfData, 'Mage');
-  stats += data.computeStats(valuesOfData, 'Marksman');
-  stats += data.computeStats(valuesOfData, 'Support');
-  console.log(stats);
+  uniqueArrayTags.forEach(ele => {
+    stats += data.computeStats(valuesOfData, ele); 
+  });
 });
 /* back to top*/
 botonTop.addEventListener('click', () => {
