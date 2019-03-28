@@ -223,7 +223,7 @@ figcaption {
 }
 
 /*Back to top */
-.button_top {
+.button-top {
   background-color: #fff;
   font-size: 64px;
   border-radius: 50%;
@@ -233,7 +233,6 @@ figcaption {
   margin-right: 20px;
   margin-bottom: 20px;
   position: fixed;
-  display: none;
   z-index: 2;
   bottom: 0;
   right: 0;
