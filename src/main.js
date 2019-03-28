@@ -91,19 +91,9 @@ botonTop.addEventListener('click', () => {
   document.documentElement.scrollTop = 0;
 });
 window.addEventListener('scroll', () => {
-
-});
-
-/* 
-window.onscroll = function() {
-  scrollFunction();
-};
-
-const scrollFunction = () => {
   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
     botonTop.style.display = 'block';
   } else {
     botonTop.style.display = 'none';
   }
-};
-*/
+});
