@@ -4,6 +4,9 @@ const root = document.getElementById('root');
 const radio = document.getElementById('radio');
 const botonTop = document.getElementById('backTop');
 const btnStats = document.getElementById('stats');
+const computeStatsResult = document.getElementById('computeStats-result');
+const computeStatsPage = document.getElementById('computeStats-page');
+const championsPage = document.getElementById('champions-page');
 
 /* data*/
 const valuesOfData = Object.values(LOL.data);
@@ -52,10 +55,8 @@ pintarTagOpcionsDeSelect(uniqueArrayTags, selectTags);
 
 selectTags.addEventListener('change', () => {
   const value = data.filterData(valuesOfData, selectTags.value);
-  const stats = data.computeStats(value); 
   showListOfAllChampions(value);
 });
-
 
 root.addEventListener('click', (event) => {
   const string = event.target.id; // accede al id de la etiqueta que se hace click
@@ -78,8 +79,12 @@ radio.addEventListener('click', (event) => {
 btnStats.addEventListener('click', () => {
   let stats = '';
   uniqueArrayTags.forEach(ele => {
-    stats += data.computeStats(valuesOfData, ele); 
+    stats += ` <h3>${data.computeStats(valuesOfData, ele)} </h3>`; 
   });
+  championsPage.classList.remove('show');
+  championsPage.classList.add('hidden');
+  computeStatsPage.classList.add('show');
+  computeStatsResult.innerHTML = stats;
 });
 /* back to top*/
 botonTop.addEventListener('click', () => {
