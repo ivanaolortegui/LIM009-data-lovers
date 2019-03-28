@@ -30,18 +30,22 @@ window.data = {
     // A-Z, Z-A
     let order = [];
     if (sortOrder === '1') {
-      if (sortBy === 'name') {
-        order = data.sort((elementA, elementB) => elementA.id.localeCompare(elementB.id));
+      if (sortBy === 'id') {
+        order = data.slice().sort((elementA, elementB) => elementA[sortBy].localeCompare(elementB[sortBy]));
       } else {
-        order = data.sort((elementA, elementB) => elementA.stats.attackdamage - elementB.stats.attackdamage);
+        order = data.slice().sort((elementA, elementB) => elementA.stats[sortBy] - elementB.stats[sortBy]);
       }
     } else {
-      if (sortBy === 'name') {
-        order = data.sort((elementA, elementB) => elementB.id.localeCompare(elementA.id));
+      if (sortBy === 'id') {
+        order = data.slice().sort((elementA, elementB) => elementB[sortBy].localeCompare(elementA[sortBy]));
       } else {
-        order = data.sort((elementA, elementB) => elementB.stats.attackdamage - elementA.stats.attackdamage);
+        order = data.slice().sort((elementA, elementB) => elementB.stats[sortBy] - elementA.stats[sortBy]);
       }
     }
+    console.log(data);
+    console.log(order);
+    
+    
     return order;
   },
   computeStats: (data, tags) => {
