@@ -8,9 +8,10 @@
 </head>
 
 <body>
-  <section>
+  <main>
+  <section id="champions-page" class="show">
     <select name="" id="select-tags"></select>
-  </section>
+ 
   <section id="radio">
     <label><input type="radio" id="r1" name="radio-name" data-name="id" value="1" checked>Asc </label>
     <label><input type="radio" id="r2" name="radio-name" data-name="id" value="-1">Desc </label>
@@ -20,6 +21,12 @@
   <button id="stats">estadistica</button>
   <div class="container" id="root"></div>
   <button id="backTop" class="button-top hidden">^</button>
+</section>
+
+  <section id="computeStats-page" class="hidden">
+    <div id ="computeStats-result"></div>
+  </section>
+</main>
   <footer>
     <div>
     </div>
