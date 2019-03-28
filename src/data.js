@@ -42,10 +42,6 @@ window.data = {
         order = data.slice().sort((elementA, elementB) => elementB.stats[sortBy] - elementA.stats[sortBy]);
       }
     }
-    console.log(data);
-    console.log(order);
-    
-    
     return order;
   },
   computeStats: (data, tags) => {
@@ -74,8 +70,8 @@ window.data = {
     console.log(arrEle);
      */
     return `
-    promedio de attack de ${tags}: ${arrMeanTank}
-    promedio de dificultad de ${tags}:   ${meanDifficulty}
+     promedio de attack de ${tags}: ${arrMeanTank} 
+     promedio de dificultad de ${tags}: ${meanDifficulty} 
     `;
   } 
 };
