@@ -3,7 +3,7 @@ const selectTags = document.getElementById('select-tags');
 const root = document.getElementById('root');
 const radio = document.getElementById('radio');
 const botonTop = document.getElementById('backTop');
-const stats = document.getElementById('stats');
+const btnStats = document.getElementById('stats');
 
 /* data*/
 const valuesOfData = Object.values(LOL.data);
@@ -60,10 +60,12 @@ selectTags.addEventListener('change', () => {
 root.addEventListener('click', (event) => {
   const string = event.target.id; // accede al id de la etiqueta que se hace click
   const index = string.substr(0, string.indexOf('-'));
-  event.currentTarget.children[index].lastElementChild.setAttribute('class', 'show');
+  event.currentTarget.children[index].lastElementChild.classList.remove('hidden');
+  event.currentTarget.children[index].lastElementChild.classList.add('show');
   const RootElements = root.children;
   for (let i = 0; i < RootElements.length; i++) {
-    RootElements[i].firstElementChild.setAttribute('class', 'hidden');
+    RootElements[i].firstElementChild.classList.remove('show');
+    RootElements[i].firstElementChild.classList.add('hidden');
   }
 });
 
@@ -73,7 +75,7 @@ radio.addEventListener('click', (event) => {
   const resultOrder = data.sortData(valuesOfData, radioValue, radioName);
   showListOfAllChampions(resultOrder);
 });
-stats.addEventListener('click', () => {
+btnStats.addEventListener('click', () => {
   let stats = '';
   stats += data.computeStats(valuesOfData, 'Tank');
   stats += data.computeStats(valuesOfData, 'Melee');
@@ -88,22 +90,12 @@ stats.addEventListener('click', () => {
 botonTop.addEventListener('click', () => {
   document.documentElement.scrollTop = 0;
 });
-
 window.addEventListener('scroll', () => {
-
-
-});
-
-/* 
-window.onscroll = function() {
-  scrollFunction();
-};
-
-const scrollFunction = () => {
   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    botonTop.style.display = 'block';
+    botonTop.classList.remove('hidden');
+    botonTop.classList.add('show');
   } else {
-    botonTop.style.display = 'none';
+    botonTop.classList.remove('show');
+    botonTop.classList.add('hidden');
   }
-};
-*/
+});
