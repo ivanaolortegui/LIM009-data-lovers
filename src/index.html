@@ -10,22 +10,26 @@
 <body>
   <main>
   <section id="champions-page" class="show">
-  <nav class='testing'>
-    <img src="img/Untitled-1.png" class="img_icon"/>
+  <nav class='nav_1'>
+    <img src="img/L-logo.png" class="img_icon"/>
     <span> <button class='btn_1'>HOME</button> </span>
     <span> <button class='btn_1'>CHAMPIONS</button> </span>
-    <span> <button class='btn_1'>STATITICS</button> </span>
+    <span> <button class='btn_1' id="stats">STATITICS</button> </span>
   </nav>
-  
-    <select name="" id="select-tags"></select>
- 
-  <section id="radio">
-    <label><input type="radio" id="r1" name="radio-name" data-name="id" value="1" checked>Asc </label>
-    <label><input type="radio" id="r2" name="radio-name" data-name="id" value="-1">Desc </label>
-    <label><input type="radio" id="r3" name="radio-name" data-name="attackdamage" value="-1">Major Damage</label>
-    <label><input type="radio" id="r4" name="radio-name" data-name="attackdamage" value="1">Minor Damage</label>
-  </section>
-  <button id="stats">estadistica</button>
+  <nav class='nav_2'>
+    <span>
+      <select name="" id="select-tags" class="choose_1"></select>
+    </span>    
+    <span>
+      <button id='btn_radios' class='choose_1'> Filter by </button>
+    </span>
+      <section id="radio" class='btn_radio'>
+        <label><input type="radio" id="r1" class='op_radius' name="radio-name" data-name="name" value="1" checked>Asc </label>
+        <label><input type="radio" id="r2" class='op_radius' name="radio-name" data-name="name" value="-1">Desc </label>
+        <label><input type="radio" id="r3" class='op_radius' name="radio-name" data-name="attack" value="-1">Major Damage</label>
+        <label><input type="radio" id="r4" class='op_radius' name="radio-name" data-name="attack" value="1">Minor Damage</label>
+      </section>
+  </nav>
   <div class="container" id="root"></div>
   <button id="backTop" class="button-top hidden">^</button>
 </section>
