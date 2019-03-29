@@ -56,7 +56,7 @@ window.data = {
     statsAttackTank.forEach((ele) => {
       sum += ele;
     });
-    const arrMeanTank = (sum / statsAttackTank.length).toFixed(2); 
+    const arrMeanTank = (sum / statsAttackTank.length).toFixed(2);
     const statsDifficultyTank = arrTank.map((arr) => arr.info.difficulty);
     statsDifficultyTank.sort((elementA, elementB) => elementA - elementB);
     let sumDifficulty = 0;
@@ -73,5 +73,5 @@ window.data = {
      promedio de attack de ${tags}: ${arrMeanTank} 
      promedio de dificultad de ${tags}: ${meanDifficulty} 
     `;
-  } 
+  }
 };
