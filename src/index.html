@@ -9,55 +9,58 @@
 
 <body>
   <main>
-  <section id="champions-page" class="show">
-  <nav class='nav_1'>
-    <img src="img/L-logo.png" class="img_icon" alt="LOL">
-    <span> <button class='btn_1'>HOME</button> </span>
-    <span> <button class='btn_1'>CHAMPIONS</button> </span>
-    <span> <button class='btn_1' id="stats">STATITICS</button> </span>
-  </nav>
-  <nav class='nav_2'>
-    <span>
-      <img src="img/content_type_icon_champion__3nwJQ.png" class="img_role" alt="icon-lol" />
-      <select name="" id="select-tags" class="choose_1"></select>
-    </span>    
-    <span>
-      <button id='btn_radios' class='choose_1'>
-        <img src="img/Sorting By.png" class="material-icons" alt="icon-arrow"/>
-        SORTING BY 
-      </button>
-    </span>
-      <section id="radio" class='btn_radio'>
-        <label><input type="radio" id="r1" class='op_radius' name="radio-name" data-name="id" value="1" checked>Asc </label>
-        <label><input type="radio" id="r2" class='op_radius' name="radio-name" data-name="id" value="-1">Desc </label>
-        <label><input type="radio" id="r3" class='op_radius' name="radio-name" data-name="attackdamage" value="-1">Major Damage</label>
-        <label><input type="radio" id="r4" class='op_radius' name="radio-name" data-name="attackdamage" value="1">Minor Damage</label>
-      </section>
-  </nav>
-  <div class="container" id="root"></div>
-  <button id="backTop" class="button-top hidden">^</button>
-</section>
+    <section id="champions-page" class="show">
+      <nav class='nav_1'>
+        <img src="img/L-logo.png" class="img_icon" alt="LOL">
+        <span> <button class='btn_1'>HOME</button> </span>
+        <span> <button class='btn_1'>CHAMPIONS</button> </span>
+        <span> <button class='btn_1' id="stats">STATITICS</button> </span>
+      </nav>
+      <nav class='nav_2'>
+        <span>
+          <img src="img/content_type_icon_champion__3nwJQ.png" class="img_role" alt="icon-lol" />
+          <select name="" id="select-tags" class="choose_1"></select>
+        </span>
+        <span>
+          <button id='btn_radios' class='choose_1'>
+            <img src="img/Sorting By.png" class="material-icons" alt="icon-arrow" />
+            SORTING BY
+          </button>
+        </span>
+        <section id="radio" class='btn_radio'>
+          <label><input type="radio" id="r1" class='op_radius' name="radio-name" data-name="id" value="1" checked>Asc
+          </label>
+          <label><input type="radio" id="r2" class='op_radius' name="radio-name" data-name="id" value="-1">Desc </label>
+          <label><input type="radio" id="r3" class='op_radius' name="radio-name" data-name="attackdamage"
+              value="-1">Major Damage</label>
+          <label><input type="radio" id="r4" class='op_radius' name="radio-name" data-name="attackdamage"
+              value="1">Minor Damage</label>
+        </section>
+      </nav>
+      <div class="container" id="root"></div>
+      <button id="backTop" class="button-top hidden">^</button>
+    </section>
 
-  <section id="computeStats-page" class="hidden">
-    <div id ="computeStats-result"></div>
-  </section>
-</main>
+    <section id="computeStats-page" class="hidden">
+      <div id="computeStats-result"></div>
+    </section>
+  </main>
   <footer>
     <section>
-      <img src="img/riotgames-logo.png" alt="riotgame's logo"/>
+      <img src="img/riotgames-logo.png" alt="riotgame's logo" />
     </section>
     <section>
-    <div class="rating-na-esrb">
-      <a class="rating-logo" href="https://www.esrb.org/ratings/ratings_guide.aspx"></a>
-      <div class="rating-text">
-       <p>Blood</p>
-       <p>Fantasy Violence</p>
-       <p>Mild Suggestive Themes</p>
-       <p>Use of Alcohol and Tobacco</p>
-       <p>Online Interactions Not Rated by the ESRB</p>
+      <div class="rating-na-esrb">
+        <a class="rating-logo" href="https://www.esrb.org/ratings/ratings_guide.aspx"></a>
+        <div class="rating-text">
+          <p>Blood</p>
+          <p>Fantasy Violence</p>
+          <p>Mild Suggestive Themes</p>
+          <p>Use of Alcohol and Tobacco</p>
+          <p>Online Interactions Not Rated by the ESRB</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   </footer>
   <script src="./data/lol/lol.js"></script>
   <script src="data.js"></script>

@@ -70,9 +70,9 @@ root.addEventListener('click', (event) => {
     RootElements[i].firstElementChild.classList.add('hidden');
   }
 });
-btn_radios.addEventListener('click', ()=>{
+btn_radios.addEventListener('click', () => {
   radio.style.display = 'block';
- });
+});
 radio.addEventListener('click', (event) => {
   const radioValue = event.target.value;
   const radioName = event.target.getAttribute('data-name');
@@ -82,7 +82,7 @@ radio.addEventListener('click', (event) => {
 btnStats.addEventListener('click', () => {
   let stats = '';
   uniqueArrayTags.forEach(ele => {
-    stats += ` <h3>${data.computeStats(valuesOfData, ele)} </h3>`; 
+    stats += ` <h3>${data.computeStats(valuesOfData, ele)} </h3>`;
   });
   championsPage.classList.remove('show');
   championsPage.classList.add('hidden');
