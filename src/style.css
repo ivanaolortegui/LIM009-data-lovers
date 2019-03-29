@@ -25,8 +25,9 @@ body {
   justify-content: space-around; 
 }
 .img_icon{
-  width: 80px;
-  height: 80px;
+  width: 122px;
+  height: 76px;
+  padding-left: 40px;
 }
 .btn_1{
   padding: 13px;
@@ -69,6 +70,17 @@ button:hover{
 }
 .op_radius{
   margin: 13px;
+  }
+.img_role{
+  width: 30px;
+  height: 45px;
+  padding-top: 10px;
+  }
+.material-icons{
+  justify-content: left;
+  width: 50px;
+  height: 30px;
+  padding-right: 15px;
   }
 .container {
   color: #937341;

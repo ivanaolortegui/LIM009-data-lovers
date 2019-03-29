@@ -42,7 +42,7 @@ const showListOfAllChampions = data => {
 showListOfAllChampions(valuesOfData);
 
 const pintarTagOpcionsDeSelect = (arrTagsUnicos, elementoSelect) => {
-  let opctionToHtml = '<option value = ""> Seleccione su role </option>';
+  let opctionToHtml = '<option value = ""> SELECT A ROLE </option>';
   arrTagsUnicos.forEach(tags => {
     opctionToHtml += `<option value =${tags}> ${tags} </option>`;
   });
