@@ -7,7 +7,7 @@ const btnStats = document.getElementById('stats');
 
 /* data*/
 const valuesOfData = Object.values(LOL.data);
-
+console.log(Object.values(LOL.data));
 const showListOfAllChampions = data => {
   let dataToHtml = [];
   data.forEach((ele, index) => {
@@ -46,6 +46,7 @@ const pintarTagOpcionsDeSelect = (arrTagsUnicos, elementoSelect) => {
 };
 
 const totalArrayTags = data.getAllChampsTags(valuesOfData);
+console.log(totalArrayTags);
 const uniqueArrayTags = data.getAllUniqueChampsTags(totalArrayTags);
 
 pintarTagOpcionsDeSelect(uniqueArrayTags, selectTags);
