@@ -9,14 +9,15 @@
 
 <body>
   <main>
-    <section id="champions-page" class="show">
+    
       <nav class='nav_1'>
         <img src="img/L-logo.png" class="img_icon" alt="LOL">
         <span> <button class='btn_1'>HOME</button> </span>
         <span> <button class='btn_1'>CHAMPIONS</button> </span>
         <span> <button class='btn_1' id="stats">STATITICS</button> </span>
       </nav>
-      <nav class='nav_2'>
+      <section  id="champions-page" class="show" >
+      <nav class="nav_2 show" >
         <span>
           <img src="img/content_type_icon_champion__3nwJQ.png" class="img_role" alt="icon-lol" />
           <select name="" id="select-tags" class="choose_1"></select>
@@ -37,10 +38,9 @@
               value="1">Minor Damage</label>
         </section>
       </nav>
-      <div class="container" id="root"></div>
+      <div class="container show" id="root"></div>
       <button id="backTop" class="button-top hidden">^</button>
     </section>
-
     <section id="computeStats-page" class="hidden">
       <div id="computeStats-result"></div>
     </section>
