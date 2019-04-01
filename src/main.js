@@ -92,7 +92,7 @@ radio.addEventListener('click', (event) => {
 btnStats.addEventListener('click', () => {
   let stats = '';
   uniqueArrayTags.forEach(ele => {
-    stats += ` <h3>${data.computeStats(valuesOfData, ele)} </h3>`;
+    stats += ` <h3 class="container">${data.computeStats(valuesOfData, ele)} </h3>`;
   });
   championsPage.classList.remove('show');
   championsPage.classList.add('hidden');
