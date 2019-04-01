@@ -1,7 +1,7 @@
 /* Manejo del DOM */
 const selectTags = document.getElementById('select-tags');
 const root = document.getElementById('root');
-const btn_radios = document.getElementById('btn_radios');
+const btnRadios = document.getElementById('btn_radios');
 const radio = document.getElementById('radio');
 const botonTop = document.getElementById('backTop');
 const btnStats = document.getElementById('stats');
@@ -70,7 +70,7 @@ root.addEventListener('click', (event) => {
     RootElements[i].firstElementChild.classList.add('hidden');
   }
 });
-btn_radios.addEventListener('click', () => {
+btnRadios.addEventListener('click', () => {
   radio.style.display = 'block';
 });
 radio.addEventListener('click', (event) => {
