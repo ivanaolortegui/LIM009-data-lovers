@@ -21,8 +21,8 @@ const showListOfAllChampions = data => {
          <h2 class="col-xs-12 col-sm-12 col-md-12"> ${ele.id} </h2>
          <img class="col-xs-12 col-sm-12 col-md-12" id=${index}-${ele.id} src="${ele.splash}" alt="imagen de ${ele.id}"/> 
        </div>
-       <div id=${index}-${ele.id} class="hidden">
-         <figure class= "col-md-12">
+       <div id=${index}-${ele.id} class="hidden col-md-12">
+         <figure>
            <img class= "col-xs-8 col-sm-3 col-md-8"src="${ele.splash}"/>
            <figcaption>
              <h3> ${ele.title} </h3>`;
@@ -33,7 +33,7 @@ const showListOfAllChampions = data => {
     listData += `<h3> ${ele.stats.attackdamage}</h3>    
            </figcaption>
          </figure>
-         <button id="to-back">Regresar</button>
+         <button id="to-back" class="btn-to-back">Regresar</button>
        </div>
      </div>`;
     dataToHtml.push(listData);

@@ -43,6 +43,22 @@ body {
 button:hover{
   background-color: #15191D;
 }
+
+.btn-to-back{
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #9B7329;
+  border-radius: 6px;
+  border: 2px solid #937341;
+}
+.btn-to-back:hover {
+  color: #9B7329;
+  background-color: #ffffff;
+}
+
 .nav_2{
   display: flex;
   justify-content: space-around; 
