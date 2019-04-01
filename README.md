@@ -2,12 +2,11 @@
 
 ## Índice
 
-* [Preámbulo](#preámbulo)
-* [Descripción](#resumen-del-proyecto)
-* [Consideraciones generales](#consideraciones-generales)
-* [Objetivos de aprendizaje](#objetivos-de-aprendizaje)
-* [Parte obligatoria](#parte-obligatoria)
-* [Parte opcional](#parte-opcional-hacker-edition)
+* [Introducción](#introducción)
+* [Definición deL Producto](#definición-del-producto)
+* [Instrumento](#instrumento-de-investigación)
+* [Historias de Usuario](#historias-de-usuario)
+* [Diseño de la Interfaz de Usuario](#baja-y-alta-fidelidad)
 * [Consideraciones técnicas](#consideraciones-técnicas)
 * [Primeros pasos](#primeros-pasos)
 * [Contenido de referencia](#contenido-de-referencia)
@@ -15,136 +14,42 @@
 
 ***
 
-## Preámbulo
+## Introducción
 
-Según un [estudio de IBM](https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=WRL12345USEN),
-el 90% de la data que existe hoy ha sido creada durante los últimos dos años.
-Cada día generamos 2.5 trillones de bytes de datos, una cifra sin precedentes.
+League of Legends (LOL) es un juego multijugador en el campo de batalla (MOBA). Este es un género de juegos relativamente nuevo que ha crecido en popularidad a lo largo de tiempo.
 
-No obstante, los datos por sí mismos son de poca utilidad. Para que esas
-grandes cantidades de datos se conviertan en **información** fácil de leer para
-los usuarios, necesitamos entender y procesar estos datos. Una manera simple de
-hacerlo es creando _interfaces_ y _visualizaciones_.
+LOL consiste en 2 equipos, que constan de cinco jugadores cada uno, compitiendo entre sí en una carrera para destruir la estructura fortificada del equipo contrario en el extremo opuesto del mapa.
+ 
+Desde su lanzamiento en el 2009, Riot Games, el desarrollador de LOL, ha podido presenciar la transformación de su juego en un deporte competitivo, y la inclusión de los eSports en la cultura general. En consecuencia, los jugadores se elevan al status de atletas y, al mismo tiempo, las experiencias del juego se convierten en espectáculos lo suficientemente atractivos como para atraer a grandes audiencias.
 
-En la siguiente imagen, podrás ver cómo con la data que que se ve en la parte
-izquierda se puede construir una interfaz amigable y entendible por el usuario
-al lado derecho.
+## Definición del Producto
 
-![json-interfaz](https://lh4.googleusercontent.com/Tn-RPXS26pVvOTdUzRT1KVaJ-_QbFs9SpcGLxSPE43fgbHaXtFgMUInuDt7kV41DkT1j8Tt29V0LxQW7SMtC6digOIhfTXSBKdwI08wUwhD3RAqlwy0hjfmhZ2BFe91mtmCSEqysfgk)
+Una página web donde se puede visualizar a todos los campeones con sus respectivos stats y skins principales. Adicionalmente, se tiene opciones de ordenado: A-Z, Z-A, Mayor Daño-Menor Daño y viceversa. Finalmente, hay una sección de estadística que muestre la media aritmética o promedio del nivel de ataque y dificultad por roles. 
 
-\* Puedes ver el detalle de la data en este [link](https://gist.github.com/lalogf/dd4aa3017a9f8aa8f90dfbca382c4dc9#file-student-json)
-y la interfaz construida en este [link](https://app.talento.laboratoria.la/profile/HFOoMpOreBU2psCcjjLg5O2EWEv2).
+El objetivo de esta página es ayudar a jugadores recientes, que lleven menos de 1 mes jugando "LOL", conocer al campeón que los impulsará al ranking "Challenger". 
 
-## Resumen del proyecto
+## Instrumento de Investigación
 
-En este proyecto **construirás una _página web_ para visualizar un
-_conjunto (set) de datos_** que se adecúe a lo que descubras que tu usuario
-necesita.
+El instrumento empleado ha sido una entrevista estructurada que se ha realizado de manera presencial. Se han aplicado las siguientes preguntas:
 
-Como entregable final tendrás una página web que permita **visualizar la data,
-filtrarla, ordenarla y hacer algún cálculo agregado**. Con cálculo agregado
-nos referimos a distintos cálculos que puedes hacer con la data para mostrar
-información aún más relevante para los usuarios (promedio, el valor máximo
-o mel ínimo, etc).
+1.	Me podrías describir con tus propias palabras sobre “League of Legends”.
+2.	¿Cuánto tiempo llevas jugando LOL? 
+3.	¿Qué crees que lo hace diferente de otros juegos en línea?
+4.	¿Crees haber desarrollado algunos “skills” en el ámbito cognitivo?
+5.	¿Cómo iniciaste jugando LOL? ¿Alguien te lo recomendó o viste un anuncio y te decidiste a intentarlo?
+6.	¿Qué característica del juego te impulso a seguir jugando?
+7.	Con respecto al website oficial de LOL, ¿Cuándo quieres averiguar o constatar información es tu “go to” recurso?
+8.	Si hubiera un website donde puedas ver todos los campeones, filtrarlos de una manera eficiente (roles, posiciones), ordenarlos no solo de la A-Z y Z-A, ¿Lo usarías?
 
-Esta vez te proponemos una serie de datos de diferentes _temáticas_ para que
-explores y decidas con qué temática te interesa trabajar. Hemos elegido
-específicamente estos sets de datos porque creemos que se adecúan bien a esta
-etapa de tu aprendizaje.
+## Historias de Usuario 
 
-Una vez que definas tu área de interés, buscar entender quién es tu usuario
-y qué necesita saber o ver exactamente; luego podrás construir la interfaz que
-le ayude a interactuar y entender mejor esos datos.
+![Historia de Usuario 1](img-readme/h1_user.png)
+![Historia de Usuario 2](img-readme/h2_user.png)
+![Historia de Usuario 3](img-readme/h3_user.png)
 
-Estos son datos que te proponemos:
-
-* [Indicadores de desarrollo del Banco Mundial](src/data/worldbank/worldbank.json)
-  de algunos países (Brasil, Chile, México y Perú). Estos datos incluyen
-  indicadores demográficos, económicos y comerciales.
-* [Pokémon](src/data/pokemon/pokemon.json):
-  En este set encontrarás una lista con los 151 Pokémon de la región de Kanto,
-  junto con sus respectivas estadísticas usadas en el juego [Pokémon GO](pokemongolive.com).
-* [Steam noticias](src/data/steam/steam.json):
-  Lista noticias relacionadas a los videojuegos presentes en la
-  plataforma de [Steam](https://store.steampowered.com/).
-* [League of Legends - Challenger leaderboard](src/data/lol/lol.json):
-  Este set de datos muestra la lista de jugadores en una liga del
-  juego League of Legends (LoL), puedes revisar la documentación de su API en
-  este [link](https://developer.riotgames.com/api-methods/).
-* [Personas heridas por medio de transporte en EEUU](src/data/injuries/injuries.json).
-  Este set nos muestra el número de personas heridas en accidentes de
-  transporte, con data anual desde 1960 y categorizada por tipo de transporte
-  (aire, barco, automóvil, moto, bicicleta, ...).
-
-Cada set de datos tiene una identidad gráfica que deberás utilizar en la
-interfaz. La identidad gráfica, también conocida como guía de estilos en
-diseño, de cada set la podrás encontrar en el siguiente
-[link](https://drive.google.com/open?id=1eeWFqrWpy-OYOH4EHDckFGunyrm9iNeE).
-
-## Consideraciones generales
-
-* Este proyecto se debe resolver en duplas.
-* El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
-  interfaz será desplegada usando [GitHub Pages](https://pages.github.com/).
-* Tiempo para completarlo: Toma como referencia 3 semanas.
-
-## Objetivos de aprendizaje
-
-El objetivo principal de este proyecto es que aprendas a diseñar y construir una
-interfaz web donde se pueda visualizar y manipular data, entendiendo lo que el
-usuario necesita.
-
-Dicho en palabras sencillas, aprenderás a:
-
-* Aplicar y profundizar todo lo que aprendiste en el proyecto anterior.
-* Pensar en las **necesidades de los usuarios** para crear historias de usuario.
-* Escribir y trabajar con **historias de usuario**, sus definiciones de
-  terminado (_definition of done_) y Criterios de Aceptación como herramienta
-  central de la organización y planificación de tu trabajo.
-* Definir qué data y de qué forma mostrarla en el producto, basándote en
-  tu **entendimiento del usuario**.
-* Crear productos que sigan los **principios básicos de diseño visual** y
-  las **heurísticas de usabilidad**.
-* Iterar el diseño del producto, basándote en los resultados de los
-  **tests de usabilidad**.
-* Manipular **_arreglos_ (_arrays_) y _objetos_ (_objects_)**.
-* **Manipular el DOM** (agregar elementos dinámicamente basados en la data).
-* **Manejar eventos del DOM** para permitir interacción con el usuario
-  (filtrado, ordenado, ...).
-* Entender los beneficios y complejidades de **trabajar en equipo** en un
-  ambiente de incertidumbre.
-
-## Parte Obligatoria
-
-Los criterios para considerar que has completado este proyecto son:
-
-### Definición del producto
-
-Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
-contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve
-el problema (o problemas) que tiene tu usuario.
-
-### Historias de usuario
-
-Una vez que entiendas las necesidades de tus usuarios, escribe las [Historias
-de Usuario](https://es.wikipedia.org/wiki/Historias_de_usuario) que representen
-todo lo que el usuario necesita hacer/ver. Las **Historias de Usuario** deben
-ser el resultado de tu proceso de investigación o _research_ de tus usuarios.
-
-Asegúrate de incluir la definición de terminado (_definition of done_) y los
-Criterios de Aceptación para cada una.
-
-En la medida de lo posible, termina una historia de usuario antes de pasar
-a la siguiente (Cumple con Definición de Terminado + Criterios de Aceptación).
-
-### Diseño de la Interfaz de Usuario
+## Diseño de la Interfaz de Usuario
 
 #### Prototipo de baja fidelidad
-
-Durante tu trabajo deberás haber hecho e iterado sketches (boceto) de tu
-solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
-iteraciones que hagas, las subas a tu repositorio, y las menciones en tu
-`README.md`.
 
 ![Sin titulo](img-readme/sketch-1.jpg)
 ![Sin titulo](img-readme/sketch-2.jpg)
@@ -154,10 +59,9 @@ iteraciones que hagas, las subas a tu repositorio, y las menciones en tu
 * Le parecio bien que sea una guia rapida ya que con un click en los diferentes campeones abre otra pagina con las caracteristicas de cada uno.
 * Tambien nos recomendaron agregar un buscador ya que nuestros usuarios son jugadores que ya conocen los nombres de los campeones.
 
-##### Segunda iteracion de prototipo de baja fidelidad.
+#### Segunda iteracion de prototipo de baja fidelidad.
 
 ![Sin titulo](img-readme/iteracion-2.jpg)
-
 
 #### Prototipo de alta fidelidad
 
