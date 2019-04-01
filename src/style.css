@@ -19,7 +19,7 @@ body {
 .show {
   display: block;
 }
-.nav_1{
+.nav-1{
   background-color: #000000;
   display: flex;
   justify-content: space-around; 
@@ -29,7 +29,7 @@ body {
   height: 76px;
   padding-left: 40px;
 }
-.btn_1{
+.btn-1{
   padding: 13px;
   cursor: pointer;
   color: #9B7329;

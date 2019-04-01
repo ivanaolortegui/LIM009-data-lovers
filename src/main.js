@@ -1,7 +1,7 @@
 /* Manejo del DOM */
 const selectTags = document.getElementById('select-tags');
 const root = document.getElementById('root');
-const btnRadios = document.getElementById('btn_radios');
+const btnRadios = document.getElementById('btn-radios');
 const radio = document.getElementById('radio');
 const botonTop = document.getElementById('backTop');
 const btnStats = document.getElementById('stats');
