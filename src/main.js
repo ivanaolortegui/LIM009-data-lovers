@@ -33,6 +33,7 @@ const showListOfAllChampions = data => {
     listData += `<h3> ${ele.stats.attackdamage}</h3>    
            </figcaption>
          </figure>
+         <button id="to-back">Regresar</button>
        </div>
      </div>`;
     dataToHtml.push(listData);
@@ -65,10 +66,19 @@ root.addEventListener('click', (event) => {
   event.currentTarget.children[index].lastElementChild.classList.remove('hidden');
   event.currentTarget.children[index].lastElementChild.classList.add('show');
   const RootElements = root.children;
-  for (let i = 0; i < RootElements.length; i++) {
+  for (let i = 0; i < RootElements.length; i++) {   
     RootElements[i].firstElementChild.classList.remove('show');
     RootElements[i].firstElementChild.classList.add('hidden');
   }
+  const btnToBack = event.currentTarget.children[index].lastElementChild.lastElementChild;
+  btnToBack.addEventListener('click', () => {
+    root.children[index].lastElementChild.classList.remove('show');
+    root.children[index].lastElementChild.classList.add('hidden');
+    for (let i = 0; i < RootElements.length; i++) {
+      RootElements[i].firstElementChild.classList.remove('hidden');
+      RootElements[i].firstElementChild.classList.add('show');
+    }  
+  });
 });
 btnRadios.addEventListener('click', () => {
   radio.style.display = 'block';
