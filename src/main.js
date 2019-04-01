@@ -5,6 +5,7 @@ const btnRadios = document.getElementById('btn-radios');
 const radio = document.getElementById('radio');
 const botonTop = document.getElementById('backTop');
 const btnStats = document.getElementById('stats');
+const btnChampions = document.getElementById('btn-champions');
 const computeStatsResult = document.getElementById('computeStats-result');
 const computeStatsPage = document.getElementById('computeStats-page');
 const championsPage = document.getElementById('champions-page');
@@ -81,7 +82,8 @@ root.addEventListener('click', (event) => {
   });
 });
 btnRadios.addEventListener('click', () => {
-  radio.style.display = 'block';
+  radio.classList.remove('hidden');
+  radio.classList.add('show');
 });
 radio.addEventListener('click', (event) => {
   const radioValue = event.target.value;
@@ -98,6 +100,12 @@ btnStats.addEventListener('click', () => {
   championsPage.classList.add('hidden');
   computeStatsPage.classList.add('show');
   computeStatsResult.innerHTML = stats;
+});
+btnChampions.addEventListener('click', () => {
+  computeStatsPage.classList.remove('show');
+  computeStatsPage.classList.add('hidden');
+  championsPage.classList.remove('hidden');
+  championsPage.classList.add('show');
 });
 /* back to top*/
 botonTop.addEventListener('click', () => {
