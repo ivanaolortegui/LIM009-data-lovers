@@ -94,7 +94,8 @@ radio.addEventListener('click', (event) => {
 btnStats.addEventListener('click', () => {
   let stats = '';
   uniqueArrayTags.forEach(ele => {
-    stats += ` <h3 class="container">${data.computeStats(valuesOfData, ele)} </h3>`;
+    stats += ` <h3 class="container">Promedio de ataque de ${ele} ${data.computeStats(valuesOfData, ele, 'attack')} </h3>
+    <h3 class="container"> Promedio de dificultad de ${ele}${data.computeStats(valuesOfData, ele, 'difficulty')} </h3>`;
   });
   championsPage.classList.remove('show');
   championsPage.classList.add('hidden');

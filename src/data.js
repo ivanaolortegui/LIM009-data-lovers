@@ -44,34 +44,25 @@ window.data = {
     }
     return order;
   },
-  computeStats: (data, tags) => {
+  computeStats: (data, tags, feature) => {
     // 1 parameter: data
     // Statistics
     const arrTank = data.filter(value => {
       return value.tags.includes(tags);
     });
-    const statsAttackTank = arrTank.map((arr) => arr.info.attack);
+    const statsAttackTank = arrTank.map((arr) => arr.info[feature]);
     statsAttackTank.sort((elementA, elementB) => elementA - elementB);
     let sum = 0;
     statsAttackTank.forEach((ele) => {
       sum += ele;
     });
     const arrMeanTank = (sum / statsAttackTank.length).toFixed(2);
-    const statsDifficultyTank = arrTank.map((arr) => arr.info.difficulty);
-    statsDifficultyTank.sort((elementA, elementB) => elementA - elementB);
-    let sumDifficulty = 0;
-    statsDifficultyTank.forEach((ele) => {
-      sumDifficulty += ele;
-    });
-    const meanDifficulty = (sumDifficulty / statsDifficultyTank.length).toFixed(2); // promedio de dificultad
+
     /*  console.log(arrTank);
     const arrEle = [];
     const totalArr = [arrTank, arrMelee, arrAssassin].forEach(ele => ele.map((arr) => arrEle.push(arr.info.attack)));
     console.log(arrEle);
      */
-    return `
-     promedio de attack de ${tags}: ${arrMeanTank} 
-     promedio de dificultad de ${tags}: ${meanDifficulty} 
-    `;
+    return arrMeanTank;
   }
 };
