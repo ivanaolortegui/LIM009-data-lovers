@@ -69,9 +69,7 @@ window.data = {
     const totalArr = [arrTank, arrMelee, arrAssassin].forEach(ele => ele.map((arr) => arrEle.push(arr.info.attack)));
     console.log(arrEle);
      */
-    return `
-     promedio de attack de ${tags}: ${arrMeanTank} 
-     promedio de dificultad de ${tags}: ${meanDifficulty} 
-    `;
+    return `promedio de attack de ${tags}:${arrMeanTank} promedio de dificultad de ${tags}:${meanDifficulty}`;
   }
 };
+
