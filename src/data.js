@@ -15,6 +15,8 @@ window.data = {
     for (let i = 0; i < arrTags.length; i++) {
       if (uniqueTags.indexOf(arrTags[i]) === -1) {
         uniqueTags.push(arrTags[i]);
+      } else {
+        uniqueTags;
       }
     }
     return uniqueTags;

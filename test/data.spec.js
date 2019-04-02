@@ -694,7 +694,7 @@ describe('data', () => {
     });
 
     it('deberia retornar un template con los promedios de nivel de daño y de dificultad según roles', () => {
-      expect(window.data.computeStats(dataChamps, 'Fighter')).toEqual('promedio de attack de Fighter:8.00 promedio de dificultad de Fighter:4.00');
+      expect(window.data.computeStats(dataChamps, 'Fighter', 'attack')).toEqual('8.00');
     });
   });
 });
