@@ -47,23 +47,23 @@ window.data = {
   computeStats: (data, tags, feature) => {
     // 1 parameter: data
     // Statistics
-    const arrTank = data.filter(value => {
+    const tagsArr = data.filter(value => {
       return value.tags.includes(tags);
     });
-    const statsAttackTank = arrTank.map((arr) => arr.info[feature]);
-    statsAttackTank.sort((elementA, elementB) => elementA - elementB);
+    const sumTagsElements = tagsArr.map((arr) => arr.info[feature]);
+    sumTagsElements.sort((elementA, elementB) => elementA - elementB);
     let sum = 0;
-    statsAttackTank.forEach((ele) => {
+    sumTagsElements.forEach((ele) => {
       sum += ele;
     });
-    const arrMeanTank = (sum / statsAttackTank.length).toFixed(2);
+    const featureTagStats = (sum / sumTagsElements.length).toFixed(2);
 
-    /*  console.log(arrTank);
+    /*  console.log(tagsArr);
     const arrEle = [];
-    const totalArr = [arrTank, arrMelee, arrAssassin].forEach(ele => ele.map((arr) => arrEle.push(arr.info.attack)));
+    const totalArr = [tagsArr, arrMelee, arrAssassin].forEach(ele => ele.map((arr) => arrEle.push(arr.info.attack)));
     console.log(arrEle);
      */
-
+    return featureTagStats;
   }
 };
 
