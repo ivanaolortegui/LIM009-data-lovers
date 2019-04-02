@@ -26,9 +26,11 @@ body {
   justify-content: space-around; 
 }
 .img_icon{
-  width: 122px;
-  height: 76px;
-  padding-left: 40px;
+position: absolute;
+width: 60px;
+height: 60px;
+left: 36px;
+top: 0px;
 }
 .btn-1{
   padding: 13px;
@@ -71,7 +73,7 @@ button:hover{
   color: #9B7329;
   background-color: #000000;
   border: none;
-  width: 500px;
+  width: 400px;
   font-weight: bold;
   font-size: 150%;
   font-family: 'Times New Roman', Times, serif;
