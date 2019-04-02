@@ -63,6 +63,7 @@ window.data = {
     const totalArr = [arrTank, arrMelee, arrAssassin].forEach(ele => ele.map((arr) => arrEle.push(arr.info.attack)));
     console.log(arrEle);
      */
-    return arrMeanTank;
+
   }
 };
+
