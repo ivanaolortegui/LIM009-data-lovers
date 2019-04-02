@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 </head>
+
 <body>
   <main>
     <nav class="nav-1">
@@ -18,27 +19,33 @@
       <span> <button class="btn-1" id="stats">STATITICS</button> </span>
     </nav>
     <section id="champions-page" class="show">
-      <nav class="nav_2 show">
-        <span>
-          <img src="img/content_type_icon_champion__3nwJQ.png" class="img_role" alt="icon-lol" />
-          <select name="" id="select-tags" class="choose_1"></select>
-        </span>
-        <span>
-          <button id="btn-radios" class="choose_1">
-            <img src="img/Sorting By.png" class="material-icons" alt="icon-arrow" />
-            SORTING BY
-          </button>
-        </span>
-        <section id="radio" class="btn_radio hidden">
-          <label><input type="radio" id="r1" class="op_radius" name="radio-name" data-name="id" value="1" checked>Asc
-          </label>
-          <label><input type="radio" id="r2" class="op_radius" name="radio-name" data-name="id" value="-1">Desc </label>
-          <label><input type="radio" id="r3" class="op_radius" name="radio-name" data-name="attackdamage"
-              value="-1">Major Damage</label>
-          <label><input type="radio" id="r4" class="op_radius" name="radio-name" data-name="attackdamage"
-              value="1">Minor Damage</label>
-        </section>
-      </nav>
+      <div>
+        <nav class="nav_2 show">
+          <span>
+            <img src="img/content_type_icon_champion__3nwJQ.png" class="img_role" alt="icon-lol" />
+            <select name="select-tags" id="select-tags" class="choose_1"></select>
+          </span>
+          <span>
+            <button id="btn-radios" class="choose_1">
+              <img src="img/Sorting-By.png" class="material-icons" alt="icon-arrow" />
+              SORTING BY
+            </button>
+          </span>
+          <section id="radio" class="btn_radio hidden">
+            <div>
+              <label><input type="radio" id="r1" class="op_radius" name="radio-name" data-name="id" value="1"
+                  checked>Asc
+              </label>
+              <label><input type="radio" id="r2" class="op_radius" name="radio-name" data-name="id" value="-1">Desc
+              </label>
+              <label><input type="radio" id="r3" class="op_radius" name="radio-name" data-name="attackdamage"
+                  value="-1">Major Damage</label>
+              <label><input type="radio" id="r4" class="op_radius" name="radio-name" data-name="attackdamage"
+                  value="1">Minor Damage</label>
+            </div>
+          </section>
+        </nav>
+      </div>
       <div class="container show" id="root"></div>
       <button id="backTop" class="button-top hidden">^</button>
     </section>
