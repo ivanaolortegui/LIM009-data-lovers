@@ -11,13 +11,16 @@
 </head>
 
 <body>
-  <main>
+  <header>
     <nav class="nav-1">
       <img src="img/L-logo.png" class="img_icon" alt="LOL">
       <span> <button class="btn-1">HOME</button> </span>
       <span> <button class="btn-1" id="btn-champions">CHAMPIONS</button> </span>
       <span> <button class="btn-1" id="stats">STATISTICS</button> </span>
     </nav>
+  </header>
+  <main>
+    <!-- pagina para mostrar todos los campeones -->
     <section id="champions-page" class="show">
       <div>
         <nav class="nav_2 show">
@@ -33,42 +36,42 @@
           </span>
           <section id="radio" class="btn_radio hidden">
             <div>
-              <label><input type="radio" id="r1" class="op_radius" name="radio-name" data-name="id" value="1"
-                  checked>Asc
-              </label>
-              <label><input type="radio" id="r2" class="op_radius" name="radio-name" data-name="id" value="-1">Desc
-              </label>
-              <label><input type="radio" id="r3" class="op_radius" name="radio-name" data-name="attackdamage"
-                  value="-1">Major Damage</label>
-              <label><input type="radio" id="r4" class="op_radius" name="radio-name" data-name="attackdamage"
-                  value="1">Minor Damage</label>
+              <input type="radio" id="r1" class="op_radius" name="radio-name" data-name="id" value="1" checked />Asc
+
+              <input type="radio" id="r2" class="op_radius" name="radio-name" data-name="id" value="-1" />Desc
+
+              <input type="radio" id="r3" class="op_radius" name="radio-name" data-name="attackdamage"
+                value="-1" />Major Damage
+              <input type="radio" id="r4" class="op_radius" name="radio-name" data-name="attackdamage" value="1" />Minor
+              Damage
             </div>
           </section>
         </nav>
       </div>
       <div class="container show" id="root"></div>
-      <button id="backTop" class="button-top hidden">^</button>
     </section>
+    <!-- Pagina para estadisticas -->
     <section id="computeStats-page" class="hidden">
       <div id="computeStats-result"></div>
     </section>
+    <!--   boton para escrolear -->
+    <button id="backTop" class="button-top hidden">^</button>
   </main>
   <footer>
     <figure class="col-xs-12 col-sm-12 col-md-12">
       <img src="img/riotgames-logo.png" alt="riotgame's logo" />
     </figure>
-    <section>
-      <div class="rating-na-esrb col-xs-12 col-sm-12 col-md-12">
-        <a class="rating-logo" href="https://www.esrb.org/ratings/ratings_guide.aspx"><img src="img/ESRB.png" alt="ESRB logo"></a>
-        <div class="rating-text">
-          <p>Blood</p>
-          <p>Fantasy Violence</p>
-          <p>Mild Suggestive Themes</p>
-          <p>Use of Alcohol and Tobacco</p>
-          <p>Online Interactions Not Rated by the ESRB</p>
-        </div>
+    <div class="rating-na-esrb col-xs-12 col-sm-12 col-md-12">
+      <a class="rating-logo" href="https://www.esrb.org/ratings/ratings_guide.aspx"><img src="img/ESRB.png"
+          alt="ESRB logo"></a>
+      <div class="rating-text">
+        <p>Blood</p>
+        <p>Fantasy Violence</p>
+        <p>Mild Suggestive Themes</p>
+        <p>Use of Alcohol and Tobacco</p>
+        <p>Online Interactions Not Rated by the ESRB</p>
       </div>
-    </section>
+    </div>
   </footer>
   <script src="./data/lol/lol.js"></script>
   <script src="data.js"></script>
