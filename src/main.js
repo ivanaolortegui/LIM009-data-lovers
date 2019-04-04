@@ -3,11 +3,11 @@ const selectTags = document.getElementById('select-tags');
 const root = document.getElementById('root');
 const btnRadios = document.getElementById('btn-radios');
 const radio = document.getElementById('radio');
-const botonTop = document.getElementById('backTop');
+const botonTop = document.getElementById('back-top');
 const btnStats = document.getElementById('stats');
 const btnChampions = document.getElementById('btn-champions');
-const computeStatsResult = document.getElementById('computeStats-result');
-const computeStatsPage = document.getElementById('computeStats-page');
+const computeStatsResult = document.getElementById('compute-stats-result');
+const computeStatsPage = document.getElementById('compute-stats-page');
 const championsPage = document.getElementById('champions-page');
 
 /* data*/
@@ -69,7 +69,7 @@ root.addEventListener('click', (event) => {
   event.currentTarget.children[index].lastElementChild.classList.remove('hidden');
   event.currentTarget.children[index].lastElementChild.classList.add('show');
   const RootElements = root.children;
-  for (let i = 0; i < RootElements.length; i++) {   
+  for (let i = 0; i < RootElements.length; i++) {
     RootElements[i].firstElementChild.classList.remove('show');
     RootElements[i].firstElementChild.classList.add('hidden');
   }
@@ -80,15 +80,13 @@ root.addEventListener('click', (event) => {
     for (let i = 0; i < RootElements.length; i++) {
       RootElements[i].firstElementChild.classList.remove('hidden');
       RootElements[i].firstElementChild.classList.add('show');
-    }  
+    }
   });
 });
-// btnRadios.addEventListener('click', () => {
-// radio.classList.remove('hidden');
-// radio.classList.add('show');
-// });
+
 btnRadios.addEventListener('click', () => {
-  radio.style.display = 'flex';
+  radio.classList.remove('hidden');
+  radio.classList.add('flex');
 });
 radio.addEventListener('click', (event) => {
   const radioValue = event.target.value;

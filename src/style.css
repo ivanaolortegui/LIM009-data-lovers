@@ -91,14 +91,13 @@ select {
 select:hover{
   background: #15191D;
 }
-.btn_radio{
+.btn-radio{
   background: #000000;
-  display: none;
   color: #937341;
   justify-content: space-around;
   padding-bottom: 36px;
 } 
-.img_menu {
+.img-menu {
   display: none;
 }
 @media (max-width:768px){

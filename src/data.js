@@ -8,6 +8,7 @@ window.data = {
     dataCampeones.forEach(tag => tag.tags.map(el => arr.push(el)));
     return arr;
   },
+  // funcion refactorizada usando condicionales ternarios 
   getAllUniqueChampsTags: (arrTags) => {
     const uniqueTags = [];
     arrTags.forEach((elem) => uniqueTags.indexOf(elem) === -1 ? uniqueTags.push(elem) : uniqueTags);
