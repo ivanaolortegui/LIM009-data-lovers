@@ -81,10 +81,13 @@ root.addEventListener('click', (event) => {
     }  
   });
 });
+// btnRadios.addEventListener('click', () => {
+  // radio.classList.remove('hidden');
+  // radio.classList.add('show');
+// });
 btnRadios.addEventListener('click', () => {
-  radio.classList.remove('hidden');
-  radio.classList.add('show');
-});
+  radio.style.display = 'flex';
+ });
 radio.addEventListener('click', (event) => {
   const radioValue = event.target.value;
   const radioName = event.target.getAttribute('data-name');
