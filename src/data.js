@@ -5,26 +5,16 @@
 window.data = {
   getAllChampsTags: (dataCampeones) => {
     const arr = [];
-    dataCampeones.forEach((ele) => {
-      arr.push(...ele.tags);
-    });
+    dataCampeones.forEach(tag => tag.tags.map(el => arr.push(el)));
     return arr;
   },
   getAllUniqueChampsTags: (arrTags) => {
     const uniqueTags = [];
-    for (let i = 0; i < arrTags.length; i++) {
-      if (uniqueTags.indexOf(arrTags[i]) === -1) {
-        uniqueTags.push(arrTags[i]);
-      } else {
-        uniqueTags;
-      }
-    }
+    arrTags.forEach((elem) => uniqueTags.indexOf(elem) === -1 ? uniqueTags.push(elem) : uniqueTags);
     return uniqueTags;
   },
   filterData: (data, word) => {
-    const roles = data.filter(value => {
-      return value.tags.includes(word);
-    });
+    const roles = data.filter(value => value.tags.includes(word));
     return roles;
   },
   sortData: (data, sortOrder, sortBy) => {
@@ -49,11 +39,9 @@ window.data = {
   computeStats: (data, tags, feature) => {
     // 1 parameter: data
     // Statistics
-    const tagsArr = data.filter(value => {
-      return value.tags.includes(tags);
-    });
+    const tagsArr = data.filter(value => value.tags.includes(tags));
     const sumTagsElements = tagsArr.map((arr) => arr.info[feature]);
-    sumTagsElements.sort((elementA, elementB) => elementA - elementB);
+    // sumTagsElements.sort((elementA, elementB) => elementA - elementB); ese era el error codigo muerto 
     let sum = 0;
     sumTagsElements.forEach((ele) => {
       sum += ele;
