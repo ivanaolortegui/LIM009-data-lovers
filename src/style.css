@@ -72,15 +72,16 @@ header label:hover{
   justify-content: center;
 
 }
-.choose_1{
+.flex {
   display: flex;
 }
 .select_role{
   align-self: center;
 }
-select{
+select {
+  cursor:pointer;
   background-color: black;
-  color: #937341;
+  color : #937341;
   border: none;
   font-family: 'Times New Roman', Times, serif;
   font-size: 100%;

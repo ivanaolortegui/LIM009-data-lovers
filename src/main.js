@@ -43,7 +43,9 @@ const showListOfAllChampions = data => {
 };
 showListOfAllChampions(valuesOfData);
 
-const pintarTagOpcionsDeSelect = (arrTagsUnicos, elementoSelect) => {
+// Pintando dinamicamente los roles unicos de los campeones 
+
+const showTagsInSelectOptions = (arrTagsUnicos, elementoSelect) => {
   let opctionToHtml = '<option value = ""> SELECT A ROLE </option>';
   arrTagsUnicos.forEach(tags => {
     opctionToHtml += `<option value =${tags}> ${tags} </option>`;
@@ -54,7 +56,7 @@ const pintarTagOpcionsDeSelect = (arrTagsUnicos, elementoSelect) => {
 const totalArrayTags = data.getAllChampsTags(valuesOfData);
 const uniqueArrayTags = data.getAllUniqueChampsTags(totalArrayTags);
 
-pintarTagOpcionsDeSelect(uniqueArrayTags, selectTags);
+showTagsInSelectOptions(uniqueArrayTags, selectTags);
 
 selectTags.addEventListener('change', () => {
   const value = data.filterData(valuesOfData, selectTags.value);
@@ -82,12 +84,12 @@ root.addEventListener('click', (event) => {
   });
 });
 // btnRadios.addEventListener('click', () => {
-  // radio.classList.remove('hidden');
-  // radio.classList.add('show');
+// radio.classList.remove('hidden');
+// radio.classList.add('show');
 // });
 btnRadios.addEventListener('click', () => {
   radio.style.display = 'flex';
- });
+});
 radio.addEventListener('click', (event) => {
   const radioValue = event.target.value;
   const radioName = event.target.getAttribute('data-name');
