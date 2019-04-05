@@ -75,9 +75,7 @@ header label:hover{
 .flex {
   display: flex;
 }
-.select_role{
-  align-self: center;
-}
+
 select {
   cursor:pointer;
   background-color: black;
@@ -104,7 +102,7 @@ select:hover{
   header label{
     display: block;
   }
-  .img_menu{
+  .img-menu{
     display: block;
   }
   .radiobutton{
