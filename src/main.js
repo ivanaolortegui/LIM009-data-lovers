@@ -6,7 +6,6 @@ const radio = document.getElementById('radio');
 const botonTop = document.getElementById('back-top');
 const btnStats = document.getElementById('stats');
 const btnChampions = document.getElementById('btn-champions');
-const computeStatsResult = document.getElementById('compute-stats-result');
 const computeStatsPage = document.getElementById('compute-stats-page');
 const championsPage = document.getElementById('champions-page');
 
@@ -19,8 +18,8 @@ const showListOfAllChampions = data => {
     let listData = `
      <div id=${index} class="show">
        <div class="col-xs-4 col-sm-4 col-md-2">
-         <h2 class="col-xs-12 col-sm-12 col-md-12"> ${ele.id} </h2>
-         <img class="col-xs-12 col-sm-12 col-md-12" id=${index}-${ele.id} src="${ele.splash}" alt="imagen de ${ele.id}"/> 
+         <h2 class="col-xs-12 col-sm-12 col-md-12"> ${ele.name} </h2>
+         <img class="col-xs-12 col-sm-12 col-md-12" id=${index}-${ele.name} src="${ele.splash}" alt="imagen de ${ele.id}"/> 
        </div>
        <div id=${index}-${ele.id} class="hidden col-md-12">
          <figure>
@@ -45,17 +44,19 @@ showListOfAllChampions(valuesOfData);
 
 // Pintando dinamicamente los roles unicos de los campeones 
 
-const showTagsInSelectOptions = (arrTagsUnicos, elementoSelect) => {
+const showTagsInSelectOptions = (arrTagsUnicos, elementSelect) => {
   let opctionToHtml = '<option value = ""> SELECT A ROLE </option>';
   arrTagsUnicos.forEach(tags => {
     opctionToHtml += `<option value =${tags}> ${tags} </option>`;
   });
-  elementoSelect.innerHTML = opctionToHtml;
+  elementSelect.innerHTML = opctionToHtml;
 };
-
+// constantes donde almaceno toda la cantidad de roles
 const totalArrayTags = data.getAllChampsTags(valuesOfData);
+// constantes donde filtro solo los roles unicos.
 const uniqueArrayTags = data.getAllUniqueChampsTags(totalArrayTags);
 
+// le paso los parametros a la funcion de pintar las opciones con value de roles
 showTagsInSelectOptions(uniqueArrayTags, selectTags);
 
 selectTags.addEventListener('change', () => {
@@ -95,15 +96,15 @@ radio.addEventListener('click', (event) => {
   showListOfAllChampions(resultOrder);
 });
 btnStats.addEventListener('click', () => {
-  let stats = '';
+  let statsResult = '';
   uniqueArrayTags.forEach(ele => {
-    stats += ` <p class="container">Promedio de ataque de ${ele} ${data.computeStats(valuesOfData, ele, 'attack')} </p>
-    <p class="container"> Promedio de dificultad de ${ele}${data.computeStats(valuesOfData, ele, 'difficulty')} </p>`;
+    statsResult += ` <h2 class="container">Promedio de ataque de ${ele}: ${data.computeStats(valuesOfData, ele, 'attack')} de ataque. </h2>
+    <h2 class="container"> Promedio de dificultad de ${ele}: ${data.computeStats(valuesOfData, ele, 'difficulty')} de dificultad. </h2>`;
   });
   championsPage.classList.remove('show');
   championsPage.classList.add('hidden');
   computeStatsPage.classList.add('show');
-  computeStatsResult.innerHTML = stats;
+  computeStatsPage.innerHTML = statsResult;
 });
 btnChampions.addEventListener('click', () => {
   computeStatsPage.classList.remove('show');
