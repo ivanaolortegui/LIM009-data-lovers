@@ -70,9 +70,6 @@ El instrumento empleado ha sido una entrevista estructurada que se ha realizado 
 
 ![Vista Campeones](img-readme/champs_page.png)
 
-#### Testeos de Usabilidad
-* 
-
 
 
 Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -
@@ -89,6 +86,8 @@ diseño debe seguir los fundamentos de _visual design_. También, deberás expor
 tu diseño a [Zeplin](https://zeplin.io/) y utilizar las especificaciones de
 estilo que te dé Zeplin al momento de implementar tus diseños en código.
 
+#### Link de Zeplin 
+[Link de Zeplin ](https://zpl.io/2GyBARW/)
 
 ## Checklist
 
