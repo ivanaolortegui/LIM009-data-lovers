@@ -65,6 +65,7 @@
   "globals": {
     "example": false,
     "LOL":false,
-    "data" : false
+    "data" : false,
+    "google": false
   }
 }

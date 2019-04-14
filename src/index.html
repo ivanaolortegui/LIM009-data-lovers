@@ -2,9 +2,12 @@
 <html lang="es">
 
 <head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <meta charset="utf-8" />
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
+  
+
 </head>
 
 <body>
@@ -42,9 +45,14 @@
             value="1" />Minor Damage</label>
       </div>
       <div class="container show" id="root"></div>
+      
     </div>
     <!-- Pagina para estadisticas -->
-    <div id="compute-stats-page" class="hidden"></div>
+    <div id="compute-stats-page" class="hidden">
+        <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+        <div id="stas-champions"></div>
+    </div>
+   
     <!--   boton para escrolear -->
     <button id="back-top" class="button-top hidden">^</button>
     <!-- footer  -->
@@ -65,9 +73,9 @@
       </div>
     </div>
   </footer>
-  <script src="./data/lol/lol.js"></script>
-  <script src="data.js"></script>
   <script src="main.js"></script>
+  <script src="data.js"></script>
+ 
 </body>
 
 </html>
