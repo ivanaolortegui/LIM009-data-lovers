@@ -24,7 +24,7 @@ const getFetchJSON = (url) => {
       return error;
     });
 };
-getFetchJSON('http://raw.githubusercontent.com/ivanaolortegui/LIM009-data-lovers/master/src/data/lol/lol.json');
+getFetchJSON('https://raw.githubusercontent.com/ivanaolortegui/LIM009-data-lovers/master/src/data/lol/lol.json');
 
 /* data*/
 // const valuesOfData = Object.values(LOL.data);
