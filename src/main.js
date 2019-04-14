@@ -9,7 +9,6 @@ const btnStats = document.getElementById('stats');
 const btnChampions = document.getElementById('btn-champions');
 const computeStatsPage = document.getElementById('compute-stats-page');
 const championsPage = document.getElementById('champions-page');
-const statsChampions = document.getElementById('stas-champions');
 
 const getFetchJSON = (url) => {
   fetch(url)
@@ -115,47 +114,38 @@ const JSONData = (valuesOfData) => {
     showListOfAllChampions(resultOrder);
   });
   btnStats.addEventListener('click', () => {
-    let statsResult = '';
-    uniqueArrayTags.forEach(ele => {
-      statsResult += ` <h2 class="container">Promedio de ataque de ${ele}: ${data.computeStats(valuesOfData, ele, 'attack')} de ataque. </h2>
-    <h2 class="container"> Promedio de dificultad de ${ele}: ${data.computeStats(valuesOfData, ele, 'difficulty')} de dificultad. </h2>`;
-    });
     championsPage.classList.remove('show');
     championsPage.classList.add('hidden');
     computeStatsPage.classList.add('show');
-    statsChampions.innerHTML = statsResult;
 
-    /* // Grafico de google charts 
+
+    // Grafico de google charts 
     google.charts.load('current', { 'packages': ['bar'] });
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-      let dataArray = [['Rol', 'dificultad', 'ataque']];
+      let dataArray = [['Rol', 'Dificultad', 'Ataque']];
       uniqueArrayTags.forEach((tags) => {
-        let dificultad = parseFloat(window.data.computeStats(valuesOfData, tags, 'difficulty'));
-        let ataque = parseFloat(window.data.computeStats(valuesOfData, tags, 'attack'));
-        let x = [tags, dificultad, ataque];
-        dataArray.push(x);
+        const difficultyStas = parseFloat(window.data.computeStats(valuesOfData, tags, 'difficulty'));
+        const attackStats = parseFloat(window.data.computeStats(valuesOfData, tags, 'attack'));
+        const tagsAndStatsArray = [tags, difficultyStas, attackStats];
+        dataArray.push(tagsAndStatsArray);
       });
-    
-      let data = google.visualization.arrayToDataTable(dataArray);
-
-      uniqueArrayTags.forEach((tags) => {
-        let dificultad = parseFloat(window.data.computeStats(valuesOfData, tags, 'difficulty'));
-        let ataque = parseFloat(window.data.computeStats(valuesOfData, tags, 'attack'));
-        let x = [tags, dificultad, ataque];
-        data.addRow(x);
-      });
+      const data = google.visualization.arrayToDataTable(dataArray);
       const options = {
         chart: {
           title: 'Promedio de Roles',
           subtitle: 'Dificultad y Ataque',
-        }
+        },
+        bars: 'vertical',
+        width: 1250,
+        height: 400,
+        colors: ['#937341', '#15191D']
+        
       };
-
       const chart = new google.charts.Bar(document.getElementById('columnchart_material'));
       chart.draw(data, google.charts.Bar.convertOptions(options));
-    } */
+    } 
   });
   btnChampions.addEventListener('click', () => {
     computeStatsPage.classList.remove('show');
