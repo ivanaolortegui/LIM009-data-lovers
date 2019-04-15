@@ -167,8 +167,8 @@ figcaption {
   /*padding: 2em;*/ /*15px*/
   float: left; 
   color: #937341;
-  background: rgba(0, 0, 0, 88);
-  outline: 1px solid rgba(155, 115, 41, 0);
+  /* background: rgba(0, 0, 0, 88);
+ */
   /* margin-right: 2%;  */
 }
 
@@ -229,9 +229,9 @@ figcaption {
      font-size: 0.8em; 
   } */
 
-  [class*= "col-"] {
+  /* [class*= "col-"] {
     background: rgba(0, 0, 0, 88);
-  }
+  } */
     
   .col-sm-1 {
     width: 8.33333333%;
@@ -292,10 +292,10 @@ figcaption {
       font-size: 1em; 
    } */
 
-  [class*= "col-"] {
+  /* [class*= "col-"] {
     background: rgba(48, 53, 52, 0.51);
     }
-      
+       */
   .col-md-11 {
     width: 92.77777777%;
   }

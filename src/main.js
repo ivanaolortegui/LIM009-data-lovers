@@ -34,7 +34,7 @@ const JSONData = (valuesOfData) => {
     data.forEach((ele, index) => {
       let listData = `
      <div id=${index} class="show">
-       <div class="col-xs-4 col-sm-4 col-md-2">
+       <div class="col-xs-6 col-sm-4 col-md-3">
          <h2 class="col-xs-12 col-sm-12 col-md-12"> ${ele.name} </h2>
          <img class="col-xs-12 col-sm-12 col-md-12" id=${index}-${ele.name} src="${ele.splash}" alt="imagen de ${ele.id}"/> 
        </div>
