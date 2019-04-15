@@ -5,7 +5,7 @@ window.data = {
   // pushando a cada elemento (tags) del array que es valor de la propiedad tags del array de la data
   getAllChampsTags: (dataCampions) => {
     const arr = [];
-    dataCampions.forEach(tag => tag.tags.map(el => arr.push(el)));
+    dataCampions.forEach(tag => tag.tags.forEach(el => arr.push(el)));
     return arr;
   },
   // funcion refactorizada usando condicionales ternarios 
